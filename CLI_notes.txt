@@ -1,0 +1,118 @@
+Reviewing Data Scientists Toolbox for CLI
+
+
+CLI commands follow this recipe: command flags arguments.
+command is the CLI commnad which does a specific task.
+Flags are options we give to the command to trigger certain behaviors, preceded
+by a -
+arguments can be what the commnad is going to modify, or other options for the
+command.
+depending on the command, there can be zero or more flags and arguments.
+
+
+ls lists files and folders in the current directory
+ls -a lists hidden and unhidden files and folders.
+ls -al lists details for hidden and unhidden fiels and folders.
+Notice that -a and -l are flags (they're preceded by a -)
+They can be combined into the flag: -al
+
+
+
+cp is for copying
+cp takes as its first argument a file, and as its second the path to where I want
+the file to be copied.
+
+
+cp can also be used for copying the contents of directories, but I must use the
+-r flag the to copy the entire directory.
+
+-r stands for recursive.
+
+
+mv stands for "move"
+with mv I can move files between directories.
+mv can be used to rename files
+
+
+git is a version control software
+that allows me to control and manage the revisions of projects that I am wokring on
+
+
+Basics of GitHub
+allows users to push and pull their local repos to and from a remote repo on the
+web
+provides users with a homepage that displays their public repos
+Users' repos are backed up on the GitHub server in case something happens to the
+local copies.
+Social aspect allows users to follow one another and share projects.
+
+
+creating a local copy of a remote repo
+
+open terminal
+create a directory on my computer where I will store a copy of the repo.
+mkdir ~/practice_repo
+
+
+~ before file paths goes from the root to the specified directory.
+
+Initialize a local Git repo in this directory
+git init
+
+now I point my local repo at the remote repo I just created on the GitHub server.
+
+git remote add origin https://github.com/Marktc1993/practice_repo.git
+
+
+To make a local copy of a forked repo
+I can clone the repo, with the forked copt I now have a copy of the desired repo
+on my GitHub account. Now I need to make a local copy of the repo on my computer
+this process is called cloning and can be done using the following command.
+
+git clone https://github.com/Marktc1993/practicerepo.git
+ clone to current working directory.
+
+
+Adding
+Suppose I want to add new files to a local repo under version control.
+I need to let Git know that they need to be tracked
+git add # adds all new files.
+git add -u # updates tracking for files that changed names or were deleted
+git add -A # does both of the previous
+THESE NEED TO BE DONE BEFORE COMMITTING
+
+
+Committing
+I have changes I want to commit to be saved as an intermediate version.
+I type the command
+
+git commit -m "message" # where message is a useful description of what I did.
+
+This only updates my local repo, not the remote repo on GitHub.
+
+Pushing
+I have saved local commits I would like to update on the remote (Github)
+I type the command
+
+git push
+
+
+
+Branches:
+Sometimes I am working on a project with a version being used by many people.
+I may not want to edit that version.
+So I can create a branch with the command.
+
+git checkout -b branchname
+
+To see what branch I am on type:
+
+git branch
+
+To switch back to the master branch type:
+
+git checkout master
+
+
+git documentation http://git-scm.com/doc
+GitHub help https://help.github.com/
